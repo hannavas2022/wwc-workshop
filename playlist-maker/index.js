@@ -16,12 +16,12 @@ if (web5) {
   loading.textContent = "Loading tracks...";
   try {
     // Check if protocol exists in user's DWN, otherwise install it
-    const playlistProtocolRes = await fetch("./finals/playlistProtocol.json");
+    const playlistProtocolRes = await fetch("./playlistProtocol.json");
     const playlistProtocol = await playlistProtocolRes.json();
     const { protocols } = await web5.dwn.protocols.query({
       message: {
         filter: {
-          protocol: playlistProtocol.protocol,
+          protocol: "https://example.com/wwc-workshop/protocol",
         },
       },
     });
