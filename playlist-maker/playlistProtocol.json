@@ -1,6 +1,41 @@
 {
-  "protocol": "",
-  "published": false,
-  "types": {},
-  "structure": {}
+  "protocol": "https://example.com/wwc-workshop/protocol",
+  "published": true,
+  "types": {
+    "playlist": {
+      "schemes": "https://example.com/wwc-workshop/schemas/playlist",
+      "dataFormats": ["application/json"]
+    },
+    "track": {
+      "schemes": "https://example.com/wwc-workshop/schemas/track",
+      "dataFormats": ["application/json"]
+    }
+  },
+  "structure": {
+    "playlist": {
+      "@actions": [
+        {
+          "who": "anyone",
+          "can": "read"
+        },
+        {
+          "who": "anyone",
+          "can": "write"
+        }
+      ]
+    },
+    "track": {
+      "@actions": [
+        {
+          "who": "author",
+          "of": "playlist",
+          "can": "write"
+        },
+        {
+          "who": "anyone",
+          "can": "write"
+        }
+      ]
+    }
+  }
 }
